@@ -48,7 +48,7 @@ const app = new Vue({
     logo: "/imgs/logo.png",
     logoSize: 250,
 
-    url: "https://linktr.ee/codedao",
+    url: "https://linktr.ee/nvt200609",
     qrCode: undefined,
     qrSize: 275,
 
@@ -114,7 +114,7 @@ const app = new Vue({
       document.body.appendChild(img);
 
       const link = document.createElement("a");
-      link.download = "taotap-card.png";
+      link.download = "Metap-card.png";
       link.href = dataUrl;
       link.click();
     },
@@ -138,7 +138,7 @@ const app = new Vue({
 
       doc.setFontSize(16);
       doc.setFont("courier", "bold");
-      doc.text(`Chon "Fit to Paper" khi in nhe :3.`, 15, 160);
+      doc.text(`Chọn "Fit to Paper" khi in nhé :3.`, 15, 160);
 
       doc.setLineWidth(3);
       doc.line(0, 0, 210, 0);
