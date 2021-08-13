@@ -1,151 +1,64 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="shortcut icon"
-      type="image/jpg"
-      href="https://i.pinimg.com/originals/26/33/e5/2633e5d5ae5a39d6d4c73adb44bfb227.jpg"
-    />
-
-    <!-- Import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/font.css" />
-    <link rel="stylesheet" href="/style.css" />
-    <title>Metap - K-ous Nguyễn</title>
-  </head>
-
-  <body>
-    <div id="app">
-      <div
-        id="card"
-        v-bind:style="{ 'background-image': 'url(' + background + ')' }"
-      >
-        <div id="overlay"></div>
-        <img
-          v-if="showLogo"
-          v-bind:src="logo"
-          v-bind:style="{ 'width': logoSize + 'px' }"
-          id="logo"
-        />
-
-        <div id="qr-code"></div>
-
-        <p id="name">
-          <span
-            v-bind:style="{ 'font-size': fontSize + 'px', 'font-family': font }"
-            id="name-content"
-            >{{name}}</span
-          >
-          <span class="hack">_</span>
-        </p>
-      </div>
-
-      <div id="form-card">
-        <div>
-          <h5>1. Logo</h5>
-          <div>
-            <label>Đổi logo (Ảnh PNG trong suốt, size &gt; 250px) </label>
-            <input type="file" @change="changeLogo" accept="image/*" />
-            <button v-on:click="showLogo = !showLogo">
-              Ẩn/Hiện Logo
-            </button>
-            <button v-on:click="logoSize -= 10">
-              - Thu nhỏ
-            </button>
-            <button v-on:click="logoSize += 10">
-              + Phóng to
-            </button>
-          </div>
+<html lang="vi">
+    <head>
+        <title>Tán tỉnh</title>
+        <link rel="stylesheet" href="style.css"/>
+        <meta charset="utf-8">
+        <link rel="apple-touch-icon" sizes="57x57" href="image/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="image/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="image/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="image/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="image/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="image/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="image/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="image/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="image/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="image/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="image/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="image/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@1,300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <iframe width="5" height="3" src="https://www.youtube.com/embed/EXnXRYo7tcc?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="click">
+        <div class="container">
+           <h1>hey you !</h1>
+           <h2>tớ có điều muốn nói với cậu</h2>
+           <h2 style="font-size: 30px;">cậu có muốn lắng nghe không ?</h2>
+            <div class="button">
+            <button id="but1" class="but1" onclick="return show();">yup, tớ sẽ lắng nghe cậu 😳</button>
+            <br><br>
+            <button id="but2" class="but1" onclick="return hide();">hoy, tớ không muốn nghe đâu 😐</button>
+            </div>
         </div>
-
-        <div>
-          <h5>
-            2. QR Code (Dùng
-            <a href="https://linktr.ee" target="_blank">linktree</a> hoặc
-            <a href="https://instabio.cc" target="_blank">instabio</a> hoặc web
-            tự code)
-          </h5>
-          <div>
-            <input v-model="url" placeholder="URL" id="url" />
-            <button v-on:click="updateQR(-10)">
-              - Thu nhỏ
-            </button>
-            <button v-on:click="updateQR(10)">
-              + Phóng to
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <h5>3. Ảnh nền</h5>
-          <div id="background-select">
-            <img
-              v-bind:src="bg"
-              v-for="bg in backgrounds"
-              v-on:click="setBackground(bg)"
-            />
-          </div>
-          <label>Đổi ảnh nền (Ảnh tỷ lệ 11:7, size &gt; 1100px X 700px) </label>
-          <input type="file" @change="changeCustomBg" accept="image/*" />
-        </div>
-
-        <div>
-          <h5>4. Thông tin thẻ (Tên dài quá có thể thu nhỏ chữ)</h5>
-          <input v-model="name" placeholder="Tên trên thẻ" id="txt-name" />
-          <select v-model="font">
-            <option v-for="fnt in fonts" :value="fnt">Font: {{fnt}}</option>
-          </select>
-
-          <button v-on:click="fontSize -= 2">
-            - Thu nhỏ
-          </button>
-          <button v-on:click="fontSize += 2">
-            + Phóng to
-          </button>
-        </div>
-
-        <div>
-          <h5>5. Xuất file</h5>
-          <button v-on:click="exportCard">
-            Tạo thẻ (Ảnh)
-          </button>
-          <button v-on:click="exportPDF">
-            Tạo thẻ (PDF)
-          </button>
-
-          <p>
-            Nếu xuất file ảnh, các bạn in màu với <b>độ phân giải 300dpi</b> sẽ
-            được ảnh <b>tầm 8.7cm x 5.5cm</b>. <br />
-            Nếu xuất file PDF thì đem đi màu A4, chọn <b>Fit to Paper</b> khi in
-            là ok. <br />
-            Dán ảnh này lên thẻ NFC trắng <b>(8.55cm X 5.4cm)</b> là được nhé!
-          </p>
-        </div>
-      </div>
+        <button id="but3" class="btn" onclick="return hide2();">hoy, tớ không muốn nghe đâu 😐</button>
+        <button id="but4" class="btn2" onclick="return hide3();">hoy, tớ không muốn nghe đâu 😐</button>
     </div>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"
-      integrity="sha512-VKjwFVu/mmKGk0Z0BxgDzmn10e590qk3ou/jkmRugAkSTMSIRkd4nEnk+n7r5WBbJquusQEQjBidrBD3IQQISQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"
-      integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="/script.js" defer></script>
-  </body>
+    <form id="form1" class="formcss" onsubmit="return valid();">
+        <h1>Cậu làm người yêu tui nhé 😍</h1>
+        <button id="fbut1" class="fbtn" onclick="return inrel();">oke, tớ cũng iu cậu nhiều lắm 🥰</button>
+        <br><br>
+        <button id="fbut2" class="fbtn" onclick="return troll();" >hong, ai thèm 🙃</button>
+        <p id="alert" style="color: aliceblue; font-size: 30px;"></p>
+        <br><br>
+        <button id="fbut3" class="fbtnh1" onclick="return troll1();" style="display: none;">hong, ai thèm 🙃</button>
+        <button id="fbut4" class="fbtnh2" onclick="return troll2();" style="display: none;">hong, ai thèm 🙃</button>
+        <p id="alert" style="color:seashell; font-size: 25px;"></p>
+        <audio id="audio"><source src="https://www.youtube.com/watch?v=EXnXRYo7tcc"></audio>
+    </form>
+    <div id="yess" class="final">
+        <h1>Tớ iu cậu nhiều lắm 🥰</h1>
+        <h2 style="font-size: 80px;">ahihi =))</h2>
+    </div>
+    </body>
+    <script src="script.js"></script>
 </html>
