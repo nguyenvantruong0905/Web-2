@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="vi">
     <head>
-        
         <meta property="og:image" content="https://i.pinimg.com/originals/26/33/e5/2633e5d5ae5a39d6d4c73adb44bfb227.jpg;ts=1628070996" />
         <link rel="shortcut icon" type="image/x-icon" href="https://i.pinimg.com/originals/26/33/e5/2633e5d5ae5a39d6d4c73adb44bfb227.jpg" sizes="16x16" />
 <link rel="icon" type="image/x-icon" href="https://i.pinimg.com/originals/26/33/e5/2633e5d5ae5a39d6d4c73adb44bfb227.jpg" sizes="16x16" />
@@ -33,6 +32,157 @@
         <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@1,300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
         <style>
+            * {
+    font-family: 'Be Vietnam', sans-serif;
+}
+h1  {
+    font-family: 'Amatic SC', cursive;
+    font-size: 160px;
+    color: aliceblue;
+}
+.but1, .but2 {
+   width: 35rem;
+   height: 10rem;
+}
+h2{
+    font-size: 50px;
+}
+h2 {
+    color:aliceblue;
+}
+.container {
+    text-align: center;
+    padding: 40px;
+}
+
+html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  .button>button {
+    transition-duration: 0.4s;
+    height: 3rem;
+    background-color: #23a6d5;
+    border-radius: 10px ;
+    color: aliceblue;
+    font-size: 30px;
+  }
+  
+  .button>button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .btn {
+    transition-duration: 0.4s;
+    height: 3rem;
+    width: 35rem;
+    background-color: #23a6d5;
+    border-radius: 10px ;
+    display: none;
+    color: aliceblue;
+    font-size: 30px;
+  }
+  .btn2 {
+    transition-duration: 0.4s;
+    background-color: #23a6d5;
+    border-radius: 10px ;
+    display: none;
+    float: right;
+    margin-right: 15px;
+    color: aliceblue;
+    font-size: 30px;
+    height: 3rem;
+    width: 35rem;
+  }
+  .btn:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .formcss {
+      display: none;
+      text-align: center;
+      padding: 100px;
+  }
+  .final {
+      display: none;
+      text-align: center;
+      padding: 100px;
+  }
+  .final>h1 {
+      font-size: 160px;
+  }
+  .inputf {
+      border-radius: 10px;
+      height: 6rem;
+      width: 35rem;
+      font-size: 40px;
+  }
+  .rea {
+      border-radius: 10px;
+      height: 5rem;
+      width: 12rem;
+      background-color: aquamarine;
+      color: black;
+      font-size: 30px;
+  }
+  .rea:hover {
+      background-color: #4CAF50;
+      color: white;
+  }
+.fbtn {
+    transition-duration: 0.4s;
+    background-color: #23a6d5;
+    border-radius: 10px ;
+    color: aliceblue;
+    font-size: 30px;
+}
+.fbtn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+.fbtnh1 {
+    transition-duration: 0.4s;
+    background-color: #23a6d5;
+    border-radius: 10px ;
+    color: aliceblue;
+    font-size: 30px;
+    float:left;
+}
+.fbtnh1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+.fbtnh2 {
+    transition-duration: 0.4s;
+    background-color: #23a6d5;
+    border-radius: 10px ;
+    color: aliceblue;
+    font-size: 30px;
+    float: right;
+}
+.fbtnh2:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
             body,a {
       cursor: url(http://cur.cursors-4u.net/cursors/cur-9/cur862.ani), url(http://cur.cursors-4u.net/cursors/cur-9/cur862.png), progress !important;
     }
@@ -72,5 +222,66 @@
         <h2 style="font-size: 80px;">ahihi =))</h2>
     </div>
     </body>
-    <script src="script.js"></script>
+    <script >
+        function hide() {
+    const x = document.getElementById("but3");
+    const y = document.getElementById("but2");
+     x.style.display="block";
+     y.style.display="none";
+    
+}
+function hide2() {
+    const x = document.getElementById("but3");
+    const y = document.getElementById("but4");
+     x.style.display="none";
+     y.style.display="block";
+}
+function hide3() {
+    const x = document.getElementById("but4");
+    const y = document.getElementById("but2");
+     x.style.display="none";
+     y.style.display="none";
+}
+function show() {
+    const x = document.getElementById("click");
+    const y = document.getElementById("form1");
+     x.style.display="none";
+     y.style.display="block";
+
+    
+}
+function troll() {
+    const x = document.getElementById("fbut2");
+    const y = document.getElementById("fbut3");
+      x.style.display="none";
+      y.style.display="block";
+      document.getElementById("alert").innerHTML = "Cậu đừng có dối lòng nữa 😙 Hãy nói thật đi";
+    return false;
+}
+function troll1() {
+    const x = document.getElementById("fbut3");
+    const y = document.getElementById("fbut4");
+     x.style.display="none";
+     y.style.display="block";
+     return false;
+}
+function troll2() {
+    const x = document.getElementById("fbut2");
+    const y = document.getElementById("fbut4");
+     x.style.display="none";
+     y.style.display="none";
+     return false;
+}
+function inrel() {
+    const x = document.getElementById("form1");
+    const y = document.getElementById("yess");
+    const z = document.getElementById("click");
+     x.style.display="none";
+     y.style.display="block";
+     z.style.display="none";
+     document.getElementById("audio").play();
+     return false;
+
+}
+    </script>
 </html>
